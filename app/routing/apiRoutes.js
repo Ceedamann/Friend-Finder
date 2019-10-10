@@ -7,48 +7,40 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         var total = 0;
         var userData = req.body;
-        var userName = userData.userName
         var scores = userData.userScores;
-        //    totalScore = [];
 
         var newFr = {
             name: "",
             photo: "",
             friends: 55
         };
-        var scored = scores.map(function(item){
+
+        var scored = scores.map(function (item) {
             return parseInt(item, 10);
         });
 
         userData = {
-            name:req.body.name,
+            name: req.body.name,
             photo: req.body.image,
             scores: scored
         };
-        //    for (let i = 0; i < scores.length; i++) {
-        //        totalScore.push(parseInt(scores[i]));
-        //    }
-        var sum = scored.reduce((a,b)=>a+b, 0);
 
-        //    console.log(totalScore);
-           for (let c = 0; c < friends.length; c++) {
+        var sum = scored.reduce((a, b) => a + b, 0);
 
-            total= 0;
-            var bfr =friends[c].scores.reduce((a,b)=> a+b, 0);
+
+        for (let c = 0; c < friends.length; c++) {
+
+            total = 0;
+            var bfr = friends[c].scores.reduce((a, b) => a + b, 0);
             total += Math.abs(sum - bfr)
-            if(total<= newFr.friends){
+            if (total <= newFr.friends) {
                 newFr.name = friends[c].name;
                 newFr.photo = friends[c].photo;
                 newFr.friends = total;
             }
-        //     //    console.log(friends[c].name, friends[j].scores)
-        //        var totalDifference = totalScore.map(
-        //            function(a, i) {
-        //                 return Math.abs(a - parseInt(friends[j].scores));
-        //                });
-        //        console.log(`${friends[j].name}'s total diff from you is is ${totalDifference.reduce((a,b) => a + b, 0)}`);
-           }
-           friends.push(userData);
-           res.json(newFr);
+
+        }
+        friends.push(userData);
+        res.json(newFr);
     })
 }
