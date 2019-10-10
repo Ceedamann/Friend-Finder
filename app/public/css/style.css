@@ -1,0 +1,14 @@
+.jumbotron{
+    background: rgb(46, 240, 104);
+    margin-top: 10px;
+}
+body{
+    background: black;
+}
+#survey{
+    border: 2px solid rgb(46, 240, 104);
+    color: rgb(255, 255, 255);
+}
+hr{
+    background: rgb(46, 240, 104);
+}

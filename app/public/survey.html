@@ -5,15 +5,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://kit.fontawesome.com/2823f235a8.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
                 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
                 crossorigin="anonymous">
+                <link rel="stylesheet" href="css/style.css">
         <title>Friend-Finder-Survey</title>
 </head>
 
 <body>
-        <div class="container">
-                <h2>Survey Questions</h2>
+        <div class="container" id="survey">
+                <h2><i class="fas fa-list"></i> Survey Questions</h2>
                 <hr class="my-4">
                 <h2>About you</h2>
                 <form>
@@ -168,10 +170,11 @@
                                 <option value="5">5(Strongly Agree)</option>
                         </select>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block" id="submit">Submit</button>
+                <button type="submit" class="btn btn-success btn-block" id="submit"><i class="far fa-check-square"></i> Submit</button>
                 <hr class="my-4">
-                <a href="/">Home</a> | <a href="/api/friends">API Friends List</a> | <a
-                        href="https://github.com/Ceedamann/Friend-Finder">GitHub Repo</a>
+                <a href="/">Home </a> | <a href="/api/friends">API Friends List </a> | <a
+                        href="https://github.com/Ceedamann/Friend-Finder">  <i
+                        class="fab fa-github"></i></a>
         </div>
         <div id="resultsModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
