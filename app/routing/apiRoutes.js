@@ -8,6 +8,8 @@ module.exports = function (app) {
         var total = 0;
         var userData = req.body;
         var scores = userData.userScores;
+        var userName = userData.userName;
+        var userImage = userData.userImage;
 
         var newFr = {
             name: "",
@@ -20,8 +22,8 @@ module.exports = function (app) {
         });
 
         userData = {
-            name: req.body.name,
-            photo: req.body.image,
+            name: userName,
+            photo: userImage,
             scores: scored
         };
 
