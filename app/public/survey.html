@@ -33,7 +33,7 @@
                         </label>
                         <p>Your mind is always buzzing with unexplored ideas and plans.</p>
                         <select class="chosen-select" id="question1">
-                                <option selected>Choose...</option>
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -47,6 +47,7 @@
                         </label>
                         <p>Generally speaking, you rely more on your experience than your imagination.</p>
                         <select class="chosen-select" id="question2">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -60,6 +61,7 @@
                         </label>
                         <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
                         <select class="chosen-select" id="question3">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -73,6 +75,7 @@
                         </label>
                         <p>You rarely do something just out of sheer curiosity.</p>
                         <select class="chosen-select" id="question4">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -86,6 +89,7 @@
                         </label>
                         <p>People can rarely upset you.</p>
                         <select class="chosen-select" id="question5">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -99,6 +103,7 @@
                         </label>
                         <p>It is often difficult for you to relate to other people’s feelings.</p>
                         <select class="chosen-select" id="question6">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -112,6 +117,7 @@
                         </label>
                         <p>In a discussion, truth should be more important than people’s sensitivities.</p>
                         <select class="chosen-select" id="question7">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -125,6 +131,7 @@
                         </label>
                         <p>You rarely get carried away by fantasies and ideas.</p>
                         <select class="chosen-select" id="question8">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -139,6 +146,7 @@
                         <p>You think that everyone’s views should be respected regardless of whether they are supported
                                 by facts or not.</p>
                         <select class="chosen-select" id="question9">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -152,6 +160,7 @@
                         </label>
                         <p>You feel more energetic after spending time with a group of people.</p>
                         <select class="chosen-select" id="question10">
+                                <option selected></option>
                                 <option value="1">1(Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -165,31 +174,28 @@
                         href="https://github.com/Ceedamann/Friend-Finder">GitHub Repo</a>
         </div>
         <div id="resultsModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal">
-                                &times;
-                              </button>
-                              <h2 class="modal-title"><strong>Best Match</strong></h2>
-                            </div>
-                  
-                            <div class="modal-body">
-                              <h2 id="matchName"></h2>
-                              <img
-                                id="matchImg"
-                                src="https://via.placeholder.com/400x400"
-                                alt="Placeholder image in case user pic doesn't show"
-                              />
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Close
-                              </button>
-                            </div>
-                          </div>
+                <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">
+                                                &times;
+                                        </button>
+                                        <h2 class="modal-title"><strong>Best Match</strong></h2>
+                                </div>
+
+                                <div class="modal-body">
+                                        <h2 id="matchName"></h2>
+                                        <img id="matchImg" src="https://via.placeholder.com/400x400"
+                                                alt="Placeholder image in case user pic doesn't show" />
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Close
+                                        </button>
+                                </div>
                         </div>
-                      </div>
+                </div>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.js"
                 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -237,13 +243,28 @@
                                         $("#matchName").text(data.name);
                                         $("#matchImg").attr("src", data.photo);
                                         $("#resultsModal").modal("toggle");
+
+                                        $("#name").val("");
+                                        $("#image").val("");
+                                        $("#question1").val("");
+                                        $("#question2").val("");
+                                        $("#question3").val("");
+                                        $("#question4").val("");
+                                        $("#question5").val("");
+                                        $("#question6").val("");
+                                        $("#question7").val("");
+                                        $("#question8").val("");
+                                        $("#question9").val("");
+                                        $("#question10").val("");
                                 });
+
 
                         } else {
                                 alert("Please fill out all fields before submitting!");
-                        }return false;
+                        }
+                        return false;
 
-                       
+
                 })
         </script>
 

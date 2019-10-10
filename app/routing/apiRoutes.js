@@ -16,32 +16,32 @@ module.exports = function (app) {
             photo: "",
             friends: 55
         };
-        var z = scores.map(function(item){
+        var scored = scores.map(function(item){
             return parseInt(item, 10);
         });
 
         userData = {
             name:req.body.name,
             photo: req.body.image,
-            scores: z
+            scores: scored
         };
         //    for (let i = 0; i < scores.length; i++) {
         //        totalScore.push(parseInt(scores[i]));
         //    }
-        var sum = z.reduce((a,b)=>a+b, 0);
+        var sum = scored.reduce((a,b)=>a+b, 0);
 
         //    console.log(totalScore);
-           for (let j = 0; j < friends.length; j++) {
+           for (let c = 0; c < friends.length; c++) {
 
             total= 0;
-            var bfr =friends[j].scores.reduce((a,b)=> a+b, 0);
+            var bfr =friends[c].scores.reduce((a,b)=> a+b, 0);
             total += Math.abs(sum - bfr)
             if(total<= newFr.friends){
-                newFr.name = friends[j].name;
-                newFr.photo = friends[j].photo;
+                newFr.name = friends[c].name;
+                newFr.photo = friends[c].photo;
                 newFr.friends = total;
             }
-        //     //    console.log(friends[j].name, friends[j].scores)
+        //     //    console.log(friends[c].name, friends[j].scores)
         //        var totalDifference = totalScore.map(
         //            function(a, i) {
         //                 return Math.abs(a - parseInt(friends[j].scores));
